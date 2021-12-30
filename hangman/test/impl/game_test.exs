@@ -18,7 +18,7 @@ defmodule Hangman.Impl.GameTest do
 
       assert game.turns_left == 7
       assert game.game_state == :initializing
-      assert game.letters ==  ["s", "e", "c", "r", "e", "t"]
+      assert game.letters == ["s", "e", "c", "r", "e", "t"]
     end
 
     test "returns not initialized when invalid word is given" do
@@ -130,7 +130,7 @@ defmodule Hangman.Impl.GameTest do
           ["h", "e", "_", "_", "_"],
           ["a", "b", "c", "d", "e", "f", "g", "h"]
         ],
-        ["i", :lost, 0, ["h", "e", "_", "_", "_"], ["a", "b", "c", "d", "e", "f", "g", "h", "i"]]
+        ["i", :lost, 0, ["h", "e", "l", "l", "o"], ["a", "b", "c", "d", "e", "f", "g", "h", "i"]]
       ]
       |> test_sequence_of_moves()
     end
