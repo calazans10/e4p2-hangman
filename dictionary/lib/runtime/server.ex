@@ -5,11 +5,11 @@ defmodule Dictionary.Runtime.Server do
 
   @spec start_link() :: {:ok, t}
   def start_link do
-    Agent.start_link(&WordList.word_list/0)
+    Agent.start_link(&WordList.word_list/0, name: __MODULE__)
   end
 
-  @spec random_word(t) :: String.t()
-  def random_word(pid) do
-    Agent.get(pid, &WordList.random_word/1)
+  @spec random_word() :: String.t()
+  def random_word() do
+    Agent.get(__MODULE__, &WordList.random_word/1)
   end
 end
