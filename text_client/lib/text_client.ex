@@ -1,6 +1,7 @@
 defmodule TextClient do
-  alias TextClient.Impl.Player
-
   @spec start() :: :ok
-  defdelegate start, to: Player
+  def start() do
+    TextClient.Runtime.RemoteHangman.connect()
+    |> TextClient.Impl.Player.start()
+  end
 end
