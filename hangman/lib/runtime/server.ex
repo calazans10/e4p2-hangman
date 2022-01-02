@@ -5,13 +5,17 @@ defmodule Hangman.Runtime.Server do
 
   use GenServer
 
-  ### client process
+  #####################################################################
+  # client process #
+  ##################
 
-  def start_link do
+  def start_link(_) do
     GenServer.start_link(__MODULE__, nil)
   end
 
-  ### server process
+  #####################################################################
+  # server process #
+  ##################
 
   def init(_) do
     {:ok, Game.new_game()}
